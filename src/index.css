@@ -6,3 +6,24 @@
     box-sizing: border-box;
     font-family: "Rubik", sans-serif;
 }
+
+/* rgb(49, 130, 206) */
+
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: #bcc8ff;
+    border-radius: 10px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background:  rgb(49, 130, 206);
+    border-radius: 10px;
+  }
+  
+  *::-webkit-scrollbar-thumb:hover {
+    background:  rgb(37, 99, 157);
+  }

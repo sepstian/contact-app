@@ -10,10 +10,16 @@ const contactSlice = createSlice({
     setContact: (state, action) => {
       state.contact = action.payload.data;
     },
+    setContactId: (state, action) => {
+      state.contact = [action.payload[0].data];
+    },
+    setContactSearch: (state, action) => {
+      state.contact = action.payload;
+    },
   },
 });
 
-export const { setContact } = contactSlice.actions;
+export const { setContact, setContactId, setContactSearch } = contactSlice.actions;
 export default contactSlice.reducer;
 
 export const getContact = () => {
@@ -22,7 +28,7 @@ export const getContact = () => {
         const getContact = await API_CALL_URL.get("/contact");
         dispatch(setContact(getContact.data))
     } catch (error) {
-      console.log(error);
+      ""
     }
   };
 };

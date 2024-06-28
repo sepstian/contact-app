@@ -7,7 +7,7 @@ const detailContactSlice = createSlice({
   },
   reducers: {
     setDetailContact: (state, action) => {
-      state.detailContact = action.payload;
+      state.detailContact = action.payload[0];
     },
     resetDetailContact: (state, action) => {
       state.detailContact = [];

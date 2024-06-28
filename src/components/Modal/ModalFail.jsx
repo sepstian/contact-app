@@ -9,7 +9,7 @@ const ModalFailure = (props) => {
       <ModalContent borderRadius="12px">
         <ModalHeader backgroundColor="#E53E3E" color="white" fontSize="4xl" fontWeight="bold" alignItems="center" justifyContent="center" py={6} borderRadius="12px">
           <FaTimesCircle style={{ marginRight: '10px' }} />
-          Failure
+          Failed
         </ModalHeader>
         <ModalBody px={8} pb={6}>
           <Text fontSize="xl" fontWeight="bold" mb="1rem" textAlign="center">

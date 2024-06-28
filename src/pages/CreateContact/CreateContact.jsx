@@ -48,7 +48,6 @@ const CreateContact = () => {
 
     const onCreate = async () => {
         const validasiAge = calculateAge(age)
-        console.log(validasiAge);
         try {
             let isValid = true;
             if (!firstName) {
@@ -77,7 +76,7 @@ const CreateContact = () => {
             }
 
             if (!firstName || !lastName || !age || !photo) {
-              setMessageError("Pastikan semua kolom terisi.")
+              setMessageError("Please ensure all fields are filled.")
             }else if(isValid) {
               setMessageError("")
               const response = await API_CALL_URL.post("/contact", {
@@ -91,10 +90,9 @@ const CreateContact = () => {
               }else{
                 onToggleOpenModalFail()
               }
-              console.log(response);
             }
         } catch (error) {
-            console.log(error);
+            alert('Bad Request')
         }
     };
 
@@ -162,8 +160,8 @@ const CreateContact = () => {
             (<ModalFailure
               isOpen={isOpenModalFail}
               onClose={onToggleCloseModalFail}
-              onClick={""}
-              judul= "Fail Create Contact."
+              onClick={onToggleCloseModalFail}
+              judul= "Failed Create Contact."
               >Please check your input data.</ModalFailure>) 
               : 
               ("")}
