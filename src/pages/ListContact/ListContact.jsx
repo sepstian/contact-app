@@ -211,14 +211,21 @@ const ListContact = () => {
   }
 
   const onContact = (data) => {
+    const containsNumber = (str, number) => {
+      return str && str.includes(number.toString());
+    };
+    const ageStartsWith = (age, number) => {
+      return age.toString().startsWith(number.toString());
+    };
+
     const resultFirstName = isContact.filter((contacts) => {
-      return contacts.firstName && (contacts.firstName.toLowerCase().includes(data.toLowerCase()) || contacts.firstName.toUpperCase().includes(data.toUpperCase()) || contacts.firstName.includes(data));
+      return contacts.firstName && (contacts.firstName.toLowerCase().includes(data.toLowerCase()) || contacts.firstName.toUpperCase().includes(data.toUpperCase()) || containsNumber(contacts.firstName, data));
     })
     const resultLastName = isContact.filter((contacts) => {
-      return contacts.lastName && (contacts.lastName.toLowerCase().includes(data.toLowerCase()) || contacts.lastName.toUpperCase().includes(data.toUpperCase()) || contacts.lastName.includes(data));
+      return contacts.lastName && (contacts.lastName.toLowerCase().includes(data.toLowerCase()) || contacts.lastName.toUpperCase().includes(data.toUpperCase()) || containsNumber(contacts.lastName, data));
     })
     const resultAge = isContact.filter((contacts) => {
-      return contacts.age === parseInt(data) || (contacts.firstName.includes(data) || contacts.lastName.includes(data));
+      return ageStartsWith(contacts.age, data) || containsNumber(contacts.firstName, data) || containsNumber(contacts.lastName, data);
     })
     const maxLength = Math.max(resultFirstName.length, resultLastName.length, resultAge.length);
     if (maxLength === resultFirstName.length) {
