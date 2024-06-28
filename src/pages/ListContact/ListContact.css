@@ -1,0 +1,6 @@
+.box_contact{
+    transition: background-color 0.4s ease-in-out;
+}
+.box_contact:hover{
+    background-color: rgb(196, 196, 253) !important;
+}

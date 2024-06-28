@@ -1,0 +1,11 @@
+.txt_navbar_contact{
+    transition: color 0.3s ease-in-out;
+}
+.txt_navbar_contact:hover{
+    color: rgb(49, 130, 206) !important;
+}
+.navbar{
+    position: sticky;
+    z-index: 2;
+    top: 0px;
+}
