@@ -225,7 +225,8 @@ const ListContact = () => {
       return contacts.lastName && (contacts.lastName.toLowerCase().includes(data.toLowerCase()) || contacts.lastName.toUpperCase().includes(data.toUpperCase()) || containsNumber(contacts.lastName, data));
     })
     const resultAge = isContact.filter((contacts) => {
-      return ageStartsWith(contacts.age, data) || containsNumber(contacts.firstName, data) || containsNumber(contacts.lastName, data);
+      return contacts.age === parseInt(data);
+      // return ageStartsWith(contacts.age, data) || containsNumber(contacts.firstName, data) || containsNumber(contacts.lastName, data);
     })
     const maxLength = Math.max(resultFirstName.length, resultLastName.length, resultAge.length);
     if (maxLength === resultFirstName.length) {
