@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { API_CALL_URL } from "../../helper";
+import axios from "axios";
 
 const contactSlice = createSlice({
   name: "contacts",
@@ -25,7 +26,8 @@ export default contactSlice.reducer;
 export const getContact = () => {
   return async (dispatch) => {
     try {
-        const getContact = await API_CALL_URL.get("/contact");
+        // const getContact = await API_CALL_URL.get("/contact"); // IF USE ENV
+        const getContact = await axios.get("https://contact.herokuapp.com/contact");
         dispatch(setContact(getContact.data))
     } catch (error) {
       ""

@@ -9,6 +9,7 @@ import useToggleModalFail from '../hooks/hooksModalFail';
 import ModalFailure from '../../components/Modal/ModalFail';
 import { useDispatch } from 'react-redux';
 import { getContact } from '../../redux/slice/listContact';
+import axios from 'axios';
 
 const CreateContact = () => {
     const dispatch = useDispatch()
@@ -79,7 +80,8 @@ const CreateContact = () => {
               setMessageError("Please ensure all fields are filled.")
             }else if(isValid) {
               setMessageError("")
-              const response = await API_CALL_URL.post("/contact", {
+              // const response = await API_CALL_URL.post("/contact", { // IF USE ENV
+              const response = await axios.post("https://contact.herokuapp.com/contact", {
                 firstName: firstName,
                 lastName: lastName,
                 age: validasiAge,

@@ -20,6 +20,7 @@ import useToggleModalInfoAccount from '../hooks/hooksModalInfoAccount';
 import { getContact, setContact, setContactId, setContactSearch } from '../../redux/slice/listContact';
 import ModalInfoAccount from '../../components/Modal/ModalInfoAccount';
 import { HiIdentification } from "react-icons/hi2";
+import axios from 'axios';
 
 const ListContact = () => {
   const dispatch = useDispatch()
@@ -64,7 +65,8 @@ const ListContact = () => {
     const getContactId = async () => {
       try {
         if(searchContact){
-          const response = await API_CALL_URL.get(`/contact/${searchContact}`);
+          // const response = await API_CALL_URL.get(`/contact/${searchContact}`); // IF USE ENV
+          const response = await axios.get(`https://contact.herokuapp.com/contact/${searchContact}`);
           if(response.status === 200 || response.status === 201){
             dispatch(setContactId([response.data]))
           }
@@ -78,7 +80,8 @@ const ListContact = () => {
   useEffect(() => {
     const getIsContact = async () => {
       try {
-        const response = await API_CALL_URL.get("/contact");
+        // const response = await API_CALL_URL.get("/contact"); // IF USE ENV
+        const response = await axios.get("https://contact.herokuapp.com/contact");
         setIsContact(response.data.data)
       } catch (error) {
         ""
@@ -88,7 +91,8 @@ const ListContact = () => {
   }, [])
   const getIsContact = async () => {
     try {
-      const response = await API_CALL_URL.get("/contact");
+      // const response = await API_CALL_URL.get("/contact"); // IF USE ENV
+      const response = await axios.get("https://contact.herokuapp.com/contact");
       setIsContact(response.data.data)
     } catch (error) {
       ""
@@ -267,8 +271,9 @@ const ListContact = () => {
         setMessageError("Please ensure all fields are filled.")
       }else if(isValid) {
         setMessageError("")
-        const response = await API_CALL_URL.put(
-          `contact/${detailContact.id}`,{
+        // const response = await API_CALL_URL.put( // IF USE ENV
+        const response = await axios.put(
+          `https://contact.herokuapp.com/contact/${detailContact.id}`,{
             firstName: firstName,
             lastName: lastName,
             age: validasiAge,
@@ -291,8 +296,9 @@ const ListContact = () => {
   };
   const deleteContact = async () => {
     try {
-      const response = await API_CALL_URL.delete(
-        `contact/${detailContact.id}`
+      // const response = await API_CALL_URL.delete( // IF USE ENV
+      const response = await axios.delete(
+        `https://contact.herokuapp.com/contact/${detailContact.id}`
       );
       if(response.status === 201 || response.status === 200){
         onToggleCloseModalDelete();
