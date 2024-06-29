@@ -292,6 +292,7 @@ const ListContact = () => {
         if(response.status === 201 || response.status === 200){
           onToggleCloseModalEdit()
           onToggleOpenModalSucces()
+          setSearchContact("")
           dispatch(getContact())
         }else{
           onToggleCloseModalEdit()
@@ -312,6 +313,7 @@ const ListContact = () => {
       if(response.status === 201 || response.status === 200){
         onToggleCloseModalDelete();
         onToggleOpenModalDeleteSucces()
+        setSearchContact("")
         dispatch(getContact())
       }else{
         onToggleCloseModalDelete();
