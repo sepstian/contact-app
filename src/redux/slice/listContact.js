@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { API_CALL_URL } from "../../helper";
+// import { API_CALL_URL } from "../../helper";
 import axios from "axios";
 
 const contactSlice = createSlice({
