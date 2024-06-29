@@ -281,9 +281,8 @@ const ListContact = () => {
         setMessageError("Please ensure all fields are filled.")
       }else if(isValid) {
         setMessageError("")
-        // const response = await API_CALL_URL.put( // IF USE ENV
-        const response = await axios.put(
-          `https://contact.herokuapp.com/contact/${detailContact.id}`,{
+        // const response = await API_CALL_URL.put(`/contact/${detailContact.id}`,{ // IF USE ENV
+        const response = await axios.put(`https://contact.herokuapp.com/contact/${detailContact.id}`,{
             firstName: firstName,
             lastName: lastName,
             age: validasiAge,
