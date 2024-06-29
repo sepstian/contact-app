@@ -89,6 +89,11 @@ const CreateContact = () => {
                 photo: photo
               });
               if(response.status === 201){
+                setFirstName("")
+                setLastName("")
+                setAge("")
+                setPhoto("")
+                dispatch(getContact())
                 onToggleOpenModalSucces()
               }else{
                 onToggleOpenModalFail()
@@ -113,7 +118,6 @@ const CreateContact = () => {
     const onSucces = () => {
       onToggleCloseModalSucces()
       navigate('/contact-list')
-      dispatch(getContact())
     }
     const onToList = () => {
       dispatch(getContact())
