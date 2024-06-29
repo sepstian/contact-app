@@ -6,7 +6,7 @@
 }
 
 .result_list_id{
-    width: 50%;
+    width: 60%;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -24,4 +24,347 @@
 .box-search-list:hover{
     background-color: #efefef !important;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 1000px) {
+    .result_list_id{
+        width: 90% !important;
+    }
+}
+@media only screen and (max-width: 840px) {
+    .box_search_n_id{
+        width: 80% !important;
+    }
+}
+@media only screen and (max-width: 750px) {
+    .image_user{
+        width: 4rem !important;
+        height: 4rem !important;
+    }
+    .txt_name{
+        font-size: 13px !important;
+    }
+    .or{
+        font-size: 13px !important;
+    }
+    .txt_age{
+        font-size: 13px !important;
+    }
+    .btn_edit{
+        width: 3rem !important;
+        height: 3rem !important;
+    }
+    .btn_delete{
+        width: 3rem !important;
+        height: 3rem !important;
+    }
+    .btn_id{
+        width: 3rem !important;
+        height: 3rem !important;
+    }
+    .input_search{
+        height: 2.2rem !important;
+    }
+}
+@media only screen and (max-width: 750px) {
+    input::placeholder {
+        font-size: 12px !important;
+        color: #999;
+    }
+    
+    /* Cross-browser compatibility */
+    input::-webkit-input-placeholder {
+        font-size: 12px !important;
+        color: #999;
+    }
+    
+    input:-moz-placeholder {
+        font-size: 12px !important;
+        color: #999;
+    }
+    
+    input::-moz-placeholder {
+        font-size: 12px !important;
+        color: #999;
+    }
+    
+    input:-ms-input-placeholder {
+        font-size: 12px !important;
+        color: #999;
+    }
+    
+    input:focus::placeholder {
+        font-size: 12px !important; 
+        color: #ccc;  
+    }
+    
+    input:focus::-webkit-input-placeholder {
+        font-size: 12px !important;
+        color: #ccc;
+    }
+    
+    input:focus:-moz-placeholder {
+        font-size: 12px !important;
+        color: #ccc;
+    }
+    
+    input:focus::-moz-placeholder {
+        font-size: 12px !important;
+        color: #ccc;
+    }
+    
+    input:focus:-ms-input-placeholder {
+        font-size: 12px !important;
+        color: #ccc;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .image_user{
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+    }
+    .txt_name{
+        font-size: 11px !important;
+    }
+    .or{
+        font-size: 11px !important;
+    }
+    .txt_age{
+        font-size: 11px !important;
+    }
+    .btn_edit{
+        width: 1rem !important;
+        height: 2rem !important;
+    }
+    .btn_delete{
+        width: 1rem !important;
+        height: 2rem !important;
+    }
+    .btn_id{
+        width: 1rem !important;
+        height: 2rem !important;
+    }
+    .box_user_info{
+        gap: 0.7rem !important;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    input::placeholder {
+        font-size: 9px !important;
+        color: #999;
+    }
+    
+    input::-webkit-input-placeholder {
+        font-size: 9px !important;
+        color: #999;
+    }
+    
+    input:-moz-placeholder {
+        font-size: 9px !important;
+        color: #999;
+    }
+    
+    input::-moz-placeholder {
+        font-size: 9px !important;
+        color: #999;
+    }
+    
+    input:-ms-input-placeholder {
+        font-size: 9px !important;
+        color: #999;
+    }
+    
+    input:focus::placeholder {
+        font-size: 9px !important; 
+        color: #ccc;  
+    }
+    
+    input:focus::-webkit-input-placeholder {
+        font-size: 9px !important;
+        color: #ccc;
+    }
+    
+    input:focus:-moz-placeholder {
+        font-size: 9px !important;
+        color: #ccc;
+    }
+    
+    input:focus::-moz-placeholder {
+        font-size: 9px !important;
+        color: #ccc;
+    }
+    
+    input:focus:-ms-input-placeholder {
+        font-size: 9px !important;
+        color: #ccc;
+    }
+    .input_search{
+        height: 2.1rem !important;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .image_user{
+        width: 2rem !important;
+        height: 2rem !important;
+    }
+    .txt_name{
+        font-size: 9px !important;
+    }
+    .or{
+        font-size: 9px !important;
+    }
+    .txt_age{
+        font-size: 9px !important;
+    }
+    .btn_edit{
+        width: 1rem !important;
+        height: 2rem !important;
+    }
+    .btn_delete{
+        width: 1rem !important;
+        height: 2rem !important;
+    }
+    .btn_id{
+        width: 1rem !important;
+        height: 2rem !important;
+    }
+    .box_user_info{
+        gap: 0.6rem !important;
+    }
+    .box_user_action{
+        gap: 10px !important;
+        height: 100% !important;
+    }
+    .result_list_id{
+        width: 100% !important;
+    }
+    .box-search-list{
+        font-size: 11px;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .image_user{
+        width: 2.7rem !important;
+        height: 2.7rem !important;
+    }
+    .txt_name{
+        font-size: 12px !important;
+    }
+    .or{
+        font-size: 12px !important;
+    }
+    .txt_age{
+        font-size: 12px !important;
+    }
+    .btn_edit{
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+    }
+    .btn_delete{
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+    }
+    .btn_id{
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+    }
+    .box_user_info{
+        gap: 0.6rem !important;
+    }
+    .box_user_action{
+        gap: 25px !important;
+        height: 100% !important;
+    }
+    .box_contact{
+        flex-direction: column;
+        height: 7.5rem !important;
+    }
+    .box_search_n_id{
+        flex-direction: column-reverse;
+        justify-content: flex-start !important;
+    }
+    .box_id{
+        justify-content: flex-start;
+        width: 100%;
+    }
+    .result_list_id{
+        top: 4.5rem;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .image_user{
+        width: 2.4rem !important;
+        height: 2.4rem !important;
+    }
+    .txt_name{
+        font-size: 10px !important;
+    }
+    .or{
+        font-size: 10px !important;
+    }
+    .txt_age{
+        font-size: 10px !important;
+    }
+}
+@media only screen and (max-width: 350px) {
+    input::placeholder {
+        font-size: 7.5px !important;
+        color: #999;
+    }
+    
+    input::-webkit-input-placeholder {
+        font-size: 7.5px !important;
+        color: #999;
+    }
+    
+    input:-moz-placeholder {
+        font-size: 7.5px !important;
+        color: #999;
+    }
+    
+    input::-moz-placeholder {
+        font-size: 7.5px !important;
+        color: #999;
+    }
+    
+    input:-ms-input-placeholder {
+        font-size: 7.5px !important;
+        color: #999;
+    }
+    
+    input:focus::placeholder {
+        font-size: 7.5px !important; 
+        color: #ccc;  
+    }
+    
+    input:focus::-webkit-input-placeholder {
+        font-size: 7.5px !important;
+        color: #ccc;
+    }
+    
+    input:focus:-moz-placeholder {
+        font-size: 7.5px !important;
+        color: #ccc;
+    }
+    
+    input:focus::-moz-placeholder {
+        font-size: 7.5px !important;
+        color: #ccc;
+    }
+    
+    input:focus:-ms-input-placeholder {
+        font-size: 7.5px !important;
+        color: #ccc;
+    }
+    .input_search{
+        height: 1.4rem !important;
+    }
+    .icon_search{
+        margin-bottom: 1rem;
+    }
 }

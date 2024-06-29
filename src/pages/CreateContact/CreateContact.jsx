@@ -10,6 +10,7 @@ import ModalFailure from '../../components/Modal/ModalFail';
 import { useDispatch } from 'react-redux';
 import { getContact } from '../../redux/slice/listContact';
 import axios from 'axios';
+import "./CreateContact.css"
 
 const CreateContact = () => {
     const dispatch = useDispatch()
@@ -114,14 +115,17 @@ const CreateContact = () => {
       navigate('/contact-list')
       dispatch(getContact())
     }
+    const onToList = () => {
+      dispatch(getContact())
+      navigate("/contact-list")
+    }
 
     return (
         <div>
             <Navbar >
               <div style={{ display: "flex", width: "auto", height: "95vh", justifyContent: "center", alignItems: "center" }}>
-                <Box style={{ display: "flex", width: "30em", height: "33rem", justifyContent: "flex-start", flexDirection: "column", gap: "0.8rem", padding: "10px 50px", borderRadius: "12px", backgroundColor: "white", border: "2px solid rgb(240, 243, 247)" }}>
-                    <Text style={{ display: "flex", fontSize: "2.6rem", color: "rgb(49, 130, 206)", fontWeight: "400" }}>Create Contact</Text>
-
+                <Box className='box_create_contact' style={{ display: "flex", width: "30em", height: "33rem", justifyContent: "flex-start", flexDirection: "column", gap: "0.8rem", padding: "10px 50px", borderRadius: "12px", backgroundColor: "white", border: "2px solid rgb(240, 243, 247)" }}>
+                    <Text className='txt_judul' style={{ display: "flex", fontSize: "2.6rem", color: "rgb(49, 130, 206)", fontWeight: "400" }}>Create Contact</Text>
                     <FormControl isRequired isInvalid={firstNameError !== ''}>
                         <FormLabel>First Name</FormLabel>
                         <Input value={firstName} onChange={(e) => setFirstName(e.target.value)} placeholder="First Name" />
@@ -143,8 +147,9 @@ const CreateContact = () => {
                     </FormControl>
 
                     <FormControl isRequired isInvalid={messageError !== ''}>
+                      <Text color="grey" className="txt_navbar_contact" style={{ display:"none", fontSize:"20px", fontWeight:"600", cursor:"pointer", justifyContent:"center"}} onClick={onToList}>To List Contact</Text>
                       <Button style={{ display: "flex", width:"100%", color: "white", fontSize: "1.5rem", fontWeight: "400", marginTop: "1rem" }} colorScheme="blue" variant="solid" size="lg" onClick={onCreate}>Create</Button>
-                      <FormErrorMessage>{messageError}</FormErrorMessage>
+                      <FormErrorMessage className='error_message'>{messageError}</FormErrorMessage>
                     </FormControl>
                 </Box>
               </div>

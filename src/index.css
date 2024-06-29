@@ -27,3 +27,12 @@
   *::-webkit-scrollbar-thumb:hover {
     background:  rgb(37, 99, 157);
   }
+
+  @media only screen and (max-width: 480px) {
+    .navbar{
+        display: none !important;
+    }
+    .txt_navbar_contact{
+        display: flex !important;
+    } 
+  }

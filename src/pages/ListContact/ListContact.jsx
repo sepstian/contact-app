@@ -21,8 +21,10 @@ import { getContact, setContact, setContactId, setContactSearch } from '../../re
 import ModalInfoAccount from '../../components/Modal/ModalInfoAccount';
 import { HiIdentification } from "react-icons/hi2";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const ListContact = () => {
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   const navIdContact = React.useRef(null);
   const [isBoxVisibleIdContact, setIsBoxVisibleIdContact] = React.useState(false);
@@ -322,23 +324,28 @@ const ListContact = () => {
     }
   };
 
+  const onToCreate = () => {
+    dispatch(getContact())
+    navigate("/")
+}
+
   return (
     <div style={{ height: "97vh", overflowY:"scroll"}}>
       <Navbar>
-        <div style={{ display: "flex", width: "auto", height: "auto", justifyContent: "center", alignItems: "center", flexDirection:"column", gap:"10px"}}>
+        <div style={{ display: "flex", width: "auto", height: "auto", justifyContent: "center", alignItems: "center", flexDirection:"column", gap:"10px", marginTop:"1rem"}}>
           <Text style={{ fontSize:"18px", fontWeight:"700", color:"gray"}}>List Contact</Text>
-          <Box style={{ display:"flex", width:"60%", gap:"10px", alignItems:"center", position:"relative"}}>
-            <Box ref={navIdContact}>
+          <Box className='box_search_n_id' style={{ display:"flex", width:"60%", gap:"10px", alignItems:"center", position:"relative" }}>
+            <Box className='box_id' ref={navIdContact}>
               <Tooltip label='List ID' placement='left' borderRadius="12px" bg='blue.500' zIndex={1}>
-                  <Button colorScheme='blue' style={{ display:"flex", width:"3rem", height:"3rem", borderRadius:"50%"}} onClick={() => setIsBoxVisibleIdContact(!isBoxVisibleIdContact)}>
+                  <Button className='btn_id' colorScheme='blue' style={{ display:"flex", width:"3rem", height:"3rem", borderRadius:"50%"}} onClick={() => setIsBoxVisibleIdContact(!isBoxVisibleIdContact)}>
                       <HiIdentification size={50} style={{ color:"white" }} />
                   </Button>
               </Tooltip>
               <Box className="result_list_id" style={{ backgroundColor:"white", position:"absolute", zIndex:"1", flexDirection:"column"}}>
                 {
-                  isContact?.map((val, id)=> {
+                  isContact?.map((val, idx)=> {
                     return(
-                      <Box className="box-search-list" style={{ display: isBoxVisibleIdContact === false ? "none":"flex", padding:"10px" }} key={id} onClick={() => onIdContactSet(val)}>{val.id}</Box>
+                      <Box className="box-search-list" style={{ display: isBoxVisibleIdContact === false ? "none":"flex", padding:"10px" }} key={idx} onClick={() => onIdContactSet(val)}>{val.id}</Box>
                     )
                   })
                 }
@@ -346,11 +353,12 @@ const ListContact = () => {
             </Box>
             <InputGroup style={{ display:"flex", }}>
               <InputLeftElement pointerEvents='none'>
-                <IoIosSearch color='gray.300'/>
+                <IoIosSearch className='icon_search' color='gray.300'/>
               </InputLeftElement>
-              <Input value={searchContact} onChange={(e) => handleSearch(e.target.value)} style={{ cursor:"pointer" }} type='text' placeholder='Search Contact with Id/FirstName/LastName/Age' />
+              <Input className='input_search' value={searchContact} onChange={(e) => handleSearch(e.target.value)} style={{ cursor:"pointer", }} type='text' placeholder='Search Contact with Id/FirstName/LastName/Age' />
             </InputGroup>
           </Box>
+          <Text color="grey" className="txt_navbar_contact" style={{ display:"none", fontSize:"16px", fontWeight:"600", cursor:"pointer"}} onClick={onToCreate}>To Create Contact</Text>
           {dataContact?.map((val, idx)=>{
             return(
               <>

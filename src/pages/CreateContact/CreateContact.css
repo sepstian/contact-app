@@ -1,0 +1,18 @@
+@media only screen and (max-width: 480px) {
+    .box_create_contact{
+        height: 35rem !important;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .txt_judul{
+        font-size: 2rem !important;
+    }
+}
+@media only screen and (max-width: 330px) {
+    .txt_judul{
+        font-size: 1.5rem !important;
+    }
+    .error_message{
+        font-size: 0.7rem;
+    }
+}
